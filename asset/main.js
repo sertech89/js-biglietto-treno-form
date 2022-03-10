@@ -2,7 +2,7 @@
 
 let bottoneGenera = document.getElementById('btn_gen_ticket');
 
-// AZIONE successiva alla pressione del BUTTON
+// AZIONE successiva alla pressione del BUTTON GENERA
 bottoneGenera.addEventListener('click',
     function () {
 
@@ -16,6 +16,16 @@ bottoneGenera.addEventListener('click',
 
         // STAMPA del nome e cognome del passeggero sul biglietto
         document.getElementById('nome_cognome').innerHTML = nome_pass;
+
+        // allert fino alla totale compilazione dei dati
+        if (nome_pass == null || nome_pass == "",
+            km_pass == null || km_pass == "",
+            eta_pass == null || eta_pass == "") {
+
+            alert('inserire tutti i dati per generare il biglietto');
+
+        } else(display_none.style.display = "block")
+
 
         // NUMERO CARROZZA e POSTO
         // IPOTIZZO che il treno abbia 8 CARROZZE e ci siano 50 POSTI a carrozza
@@ -77,3 +87,22 @@ prezzo_ticket_pass = prezzo_ticket_pass.toFixed(2);
 // Stampa prezzo finale
 document.getElementById('prezzo_ticket_pass').innerHTML = `${prezzo_ticket_pass} €`;
 
+
+
+// azione pressione sul bottone Annulla
+
+let bottoneAnnulla = document.getElementById("btn_calcel");
+
+bottoneAnnulla.addEventListener('click',
+    function () {
+
+        // premendo il biglietto sparisce
+        let display_none = document.getElementById('display_none');
+        display_none.style.display = "none";
+
+        // i dati input vengono azzerati
+        document.getElementById("nome_pass").value = " ";
+        document.getElementById("km_pass").value = " ";
+        document.getElementById("eta_pass").value = " ";
+    }
+)
