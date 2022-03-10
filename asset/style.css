@@ -54,5 +54,55 @@ input {
 } 
 
 
+/* SEZIONE biglietto generato */
+
+#display_none {
+    display: block;
+}
+
+#box_ticket {
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 0 20px 20px 20px;
+    text-align: center;
+}
+
+#box_ticket h2 {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    text-align: start;
+    font-size: 25px;
+}
+
+#box_ticket #ticket_pass {
+    width: 100%;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.bg_gray {
+    background-color: gray;
+    padding: 5px 20px;
+}
+
+#box_ticket #ticket_pass div:not(:first-of-type) {
+    margin: 5px 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .box_input .row , 
+    #box_ticket #ticket_pass {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box_input .row .col {
+        width: 90%;
+    }
+}
+
+
 
 
